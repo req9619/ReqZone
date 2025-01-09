@@ -1,0 +1,9 @@
+local player = game.Players.LocalPlayer
+
+while true do
+    local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+    if root then
+        print("Coordinates:", root.Position)
+    end
+    wait(10)
+end
