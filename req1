@@ -38,16 +38,24 @@ local MainTab = Window:CreateTab("🎋 Home", nil) -- Title, Image
 local MainSection = MainTab:CreateSection("Scripts")
 
 local Button = MainTab:CreateButton({
-   Name = "Simple Spy 🕵️‍♂️",
+   Name = "Hydroxide 🌊",
    Callback = function()
-   loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+    local owner = "Upbolt"
+    local branch = "revision"
+    
+    local function webImport(file)
+        return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+    end
+    
+    webImport("init")
+    webImport("ui/main")
    end,
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Dex V5 🔍",
+   Name = "Dex Explorer 🌌",
    Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/AlterX404/DarkDEX-V5/refs/heads/main/DarkDEX-V5"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
    end,
 })
 
